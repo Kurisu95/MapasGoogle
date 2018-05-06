@@ -104,5 +104,26 @@ namespace MapasGoogle
         {
             dataGridView1.Rows.RemoveAt(filaSeleccionada);
         }
+
+        private void btnPolygon_Click(object sender, EventArgs e)
+        {
+            GMapOverlay Poligono = new GMapOverlay("POligono");
+            List<PointLatLng> puntos = new List<PointLatLng>();
+
+            double lng, lat;
+            for(int filas = 0; filas < dataGridView1.Rows.Count -1 ; filas++)
+            {
+                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
+                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
+                puntos.Add(new PointLatLng(lat, lng));
+
+            }
+            GMapPolygon poligonoPuntos = new GMapPolygon(puntos, "Poligono");
+            Poligono.Polygons.Add(poligonoPuntos);
+            gMapControl1.Overlays.Add(Poligono);
+
+            gMapControl1.Zoom = gMapControl1.Zoom + 1;
+            gMapControl1.Zoom = gMapControl1.Zoom - 1;
+        }
     }
 }
