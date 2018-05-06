@@ -1,0 +1,13 @@
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.exe.config
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.exe
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.pdb
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\bin\Debug\GMap.NET.Core.dll
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\bin\Debug\GMap.NET.WindowsForms.dll
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csprojResolveAssemblyReference.cache
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.Form1.resources
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.Properties.Resources.resources
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.GenerateResource.cache
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CoreCompileInputs.cache
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CopyComplete
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.exe
+c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.pdb
