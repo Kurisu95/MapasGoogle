@@ -42,6 +42,17 @@ namespace MapasGoogle
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
+            dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
+            dt.Columns.Add(new DataColumn("Lat", typeof(double)));
+            dt.Columns.Add(new DataColumn("Lng", typeof(double)));
+
+            dt.Rows.Add("Ubicacion1", LatInicial, LngInicial);
+            dataGridView1.DataSource = dt;
+
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
+
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
@@ -50,6 +61,31 @@ namespace MapasGoogle
             gMapControl1.MaxZoom = 24;
             gMapControl1.Zoom = 9;
             gMapControl1.AutoScroll = true;
+
+            //marcador
+            markerOverlay = new GMapOverlay("Marcador");
+            marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.green);
+            markerOverlay.Markers.Add(marker);
+
+            //tooltip
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            marker.ToolTipText = string.Format("Ubicacion: \n Latitud: {0} \n Longitud: {1}", LatInicial, LngInicial);
+            gMapControl1.Overlays.Add(markerOverlay);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SeleccionarRegistro(object sender, DataGridViewCellEventArgs e)
+        {
+            filaSeleccionada = e.RowIndex;
+            txtDescipcion.Text = dataGridView1.Rows[filaSeleccionada].Cells[0].Value.ToString();
+            txtLatitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
+            txtLongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+            marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+            gMapControl1.Position = marker.Position;
         }
     }
 }
