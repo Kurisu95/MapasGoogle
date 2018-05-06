@@ -30,11 +30,6 @@ namespace MapasGoogle
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -86,6 +81,28 @@ namespace MapasGoogle
             txtLongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
             marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
             gMapControl1.Position = marker.Position;
+        }
+
+        private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lng = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+
+            txtLatitud.Text = lat.ToString();
+            txtLongitud.Text = lng.ToString();
+
+            marker.Position = new PointLatLng(lat, lng);
+            marker.ToolTipText = string.Format("Ubicacion: \n Latitud: {0} \n Longitud: {1}", lat, lng);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.RemoveAt(filaSeleccionada);
         }
     }
 }
