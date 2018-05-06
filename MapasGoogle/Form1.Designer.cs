@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPolygon = new System.Windows.Forms.Button();
+            this.btnRuta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,11 +163,22 @@
             this.btnPolygon.UseVisualStyleBackColor = true;
             this.btnPolygon.Click += new System.EventHandler(this.btnPolygon_Click);
             // 
+            // btnRuta
+            // 
+            this.btnRuta.Location = new System.Drawing.Point(648, 198);
+            this.btnRuta.Name = "btnRuta";
+            this.btnRuta.Size = new System.Drawing.Size(75, 23);
+            this.btnRuta.TabIndex = 11;
+            this.btnRuta.Text = "Ruta";
+            this.btnRuta.UseVisualStyleBackColor = true;
+            this.btnRuta.Click += new System.EventHandler(this.btnRuta_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRuta);
             this.Controls.Add(this.btnPolygon);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -200,6 +212,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPolygon;
+        private System.Windows.Forms.Button btnRuta;
     }
 }
 

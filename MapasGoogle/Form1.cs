@@ -125,5 +125,26 @@ namespace MapasGoogle
             gMapControl1.Zoom = gMapControl1.Zoom + 1;
             gMapControl1.Zoom = gMapControl1.Zoom - 1;
         }
+
+        private void btnRuta_Click(object sender, EventArgs e)
+        {
+            GMapOverlay Ruta = new GMapOverlay("CapaRuta");
+            List<PointLatLng> puntos = new List<PointLatLng>();
+
+            double lng, lat;
+            for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
+            {
+                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
+                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
+                puntos.Add(new PointLatLng(lat, lng));
+
+            }
+            GMapRoute PuntosRuta = new GMapRoute(puntos, "Ruta");
+            Ruta.Routes.Add(PuntosRuta);
+            gMapControl1.Overlays.Add(Ruta);
+
+            gMapControl1.Zoom = gMapControl1.Zoom + 1;
+            gMapControl1.Zoom = gMapControl1.Zoom - 1;
+        }
     }
 }
