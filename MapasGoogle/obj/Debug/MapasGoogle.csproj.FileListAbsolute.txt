@@ -11,3 +11,16 @@ c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGo
 c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CopyComplete
 c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.exe
 c:\users\cristhian rivera\source\repos\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.pdb
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.exe.config
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.exe
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\bin\Debug\MapasGoogle.pdb
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\bin\Debug\GMap.NET.Core.dll
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.Form1.resources
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.Properties.Resources.resources
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.GenerateResource.cache
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CopyComplete
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.exe
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.pdb
