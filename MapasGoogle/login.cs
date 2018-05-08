@@ -17,6 +17,11 @@ namespace MapasGoogle
             InitializeComponent();
         }
 
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
         private void login_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +29,16 @@ namespace MapasGoogle
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if(userTxtBox.Text == "Admin" && passwordTxtBox.Text == "password")
+            {
+                this.Hide();
+                Form1 ss = new Form1();
+                ss.Show();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect username and/or password");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

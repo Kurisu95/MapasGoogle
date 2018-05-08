@@ -146,5 +146,6 @@ namespace MapasGoogle
             gMapControl1.Zoom = gMapControl1.Zoom + 1;
             gMapControl1.Zoom = gMapControl1.Zoom - 1;
         }
+
     }
 }

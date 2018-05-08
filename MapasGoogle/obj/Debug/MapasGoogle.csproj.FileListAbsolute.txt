@@ -24,3 +24,4 @@ C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.Cor
 C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.csproj.CopyComplete
 C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.exe
 C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.pdb
+C:\Users\Usuario\Github\MapasGoogle\MapasGoogle\obj\Debug\MapasGoogle.login.resources
