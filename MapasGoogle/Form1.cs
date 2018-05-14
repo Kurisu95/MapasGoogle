@@ -13,10 +13,14 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 
+using System.Runtime.InteropServices;
+
 namespace MapasGoogle
 {
     public partial class Form1 : Form
     {
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\DLLAirport\\Debug\\DLLAirport.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern int Create_Airport(string name, double lat, double lon);
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -97,7 +101,10 @@ namespace MapasGoogle
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+           
             dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
+            Create_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
