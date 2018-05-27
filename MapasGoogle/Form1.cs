@@ -19,8 +19,17 @@ namespace MapasGoogle
 {
     public partial class Form1 : Form
     {
-        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\DLLAirport\\Debug\\DLLAirport.dll", CallingConvention = CallingConvention.StdCall)]
-        public static extern int Create_Airport(string name, double lat, double lon);
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Creat_Airport(string name, double lat, double lon);
+        //[DllImport("C:\\Users\\Mario Flores JR\\Desktop\\DLLAirport.dll", CallingConvention = CallingConvention.StdCall)]
+        //public static extern string Read_Airport(int pos);
+
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Read_Airport(StringBuilder buff, int pos);
+
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern int Lenght_File();
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -46,7 +55,7 @@ namespace MapasGoogle
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Lng", typeof(double)));
 
-            dt.Rows.Add("Ubicacion1", LatInicial, LngInicial);
+            //dt.Rows.Add("Ubicacion1", LatInicial, LngInicial);
             dataGridView1.DataSource = dt;
 
             dataGridView1.Columns[1].Visible = false;
@@ -75,6 +84,17 @@ namespace MapasGoogle
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            Char delimit = ';';
+            for (int i = 0; i < Lenght_File(); i++)
+            {
+                StringBuilder st = new StringBuilder(1000);
+                Read_Airport(st, (i + 1));
+                String[] elements = st.ToString().Split(delimit);
+
+                dt.Rows.Add(elements[0], elements[1], elements[2]);
+
+            }
+
         }
 
         private void SeleccionarRegistro(object sender, DataGridViewCellEventArgs e)
@@ -101,19 +121,24 @@ namespace MapasGoogle
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-            dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
-            Create_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+
+                Creat_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+                dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
+
+               
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            
             dataGridView1.Rows.RemoveAt(filaSeleccionada);
         }
 
         private void btnPolygon_Click(object sender, EventArgs e)
         {
+            
+
             GMapOverlay Poligono = new GMapOverlay("POligono");
             List<PointLatLng> puntos = new List<PointLatLng>();
 
