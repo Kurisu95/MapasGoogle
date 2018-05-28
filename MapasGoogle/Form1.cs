@@ -21,14 +21,16 @@ namespace MapasGoogle
     {
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void Creat_Airport(string name, double lat, double lon);
-        //[DllImport("C:\\Users\\Mario Flores JR\\Desktop\\DLLAirport.dll", CallingConvention = CallingConvention.StdCall)]
-        //public static extern string Read_Airport(int pos);
+      
 
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void Read_Airport(StringBuilder buff, int pos);
 
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int Lenght_File();
+
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Delete_Airport(string name);
 
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
@@ -114,6 +116,7 @@ namespace MapasGoogle
 
             txtLatitud.Text = lat.ToString();
             txtLongitud.Text = lng.ToString();
+            txtDescipcion.Text = "";
 
             marker.Position = new PointLatLng(lat, lng);
             marker.ToolTipText = string.Format("Ubicacion: \n Latitud: {0} \n Longitud: {1}", lat, lng);
@@ -124,15 +127,22 @@ namespace MapasGoogle
 
                 Creat_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
                 dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
+                txtDescipcion.Text = "";
+                txtLatitud.Text = "";
+                txtLongitud.Text = "";
 
-               
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
+            Delete_Airport(txtDescipcion.Text);
             dataGridView1.Rows.RemoveAt(filaSeleccionada);
+            txtDescipcion.Text = "";
+            txtLatitud.Text = "";
+            txtLongitud.Text = "";
+                
         }
 
         private void btnPolygon_Click(object sender, EventArgs e)
