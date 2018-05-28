@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
@@ -189,5 +190,22 @@ namespace MapasGoogle
             gMapControl1.Zoom = gMapControl1.Zoom - 1;
         }
 
+        private void POINTBUTTON_Click(object sender, EventArgs e)
+        {
+            double lng, lat;
+            //for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
+            //{
+            //    lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
+            //    lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
+            //    marker.Position = new PointLatLng(lat, lng);
+            //    gMapControl1.Position = marker.Position;
+
+            //}
+        }
+
+        private void Ruta_Button_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

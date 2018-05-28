@@ -40,6 +40,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPolygon = new System.Windows.Forms.Button();
             this.btnRuta = new System.Windows.Forms.Button();
+            this.POINTBUTTON = new System.Windows.Forms.Button();
+            this.Ruta_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
             this.gMapControl1.Location = new System.Drawing.Point(1, 10);
-            this.gMapControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gMapControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -75,7 +77,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(425, 137);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 19);
             this.btnAgregar.TabIndex = 1;
@@ -86,7 +88,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(486, 137);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(56, 19);
             this.btnEliminar.TabIndex = 2;
@@ -97,7 +99,7 @@
             // txtDescipcion
             // 
             this.txtDescipcion.Location = new System.Drawing.Point(426, 30);
-            this.txtDescipcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescipcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescipcion.Name = "txtDescipcion";
             this.txtDescipcion.Size = new System.Drawing.Size(76, 20);
             this.txtDescipcion.TabIndex = 3;
@@ -105,7 +107,7 @@
             // txtLatitud
             // 
             this.txtLatitud.Location = new System.Drawing.Point(425, 67);
-            this.txtLatitud.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLatitud.Margin = new System.Windows.Forms.Padding(2);
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.Size = new System.Drawing.Size(76, 20);
             this.txtLatitud.TabIndex = 4;
@@ -113,7 +115,7 @@
             // txtLongitud
             // 
             this.txtLongitud.Location = new System.Drawing.Point(425, 106);
-            this.txtLongitud.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLongitud.Margin = new System.Windows.Forms.Padding(2);
             this.txtLongitud.Name = "txtLongitud";
             this.txtLongitud.Size = new System.Drawing.Size(76, 20);
             this.txtLongitud.TabIndex = 5;
@@ -155,7 +157,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(425, 194);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -166,7 +168,7 @@
             // btnPolygon
             // 
             this.btnPolygon.Location = new System.Drawing.Point(425, 161);
-            this.btnPolygon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPolygon.Margin = new System.Windows.Forms.Padding(2);
             this.btnPolygon.Name = "btnPolygon";
             this.btnPolygon.Size = new System.Drawing.Size(56, 19);
             this.btnPolygon.TabIndex = 10;
@@ -177,7 +179,7 @@
             // btnRuta
             // 
             this.btnRuta.Location = new System.Drawing.Point(486, 161);
-            this.btnRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRuta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRuta.Name = "btnRuta";
             this.btnRuta.Size = new System.Drawing.Size(56, 19);
             this.btnRuta.TabIndex = 11;
@@ -185,11 +187,35 @@
             this.btnRuta.UseVisualStyleBackColor = true;
             this.btnRuta.Click += new System.EventHandler(this.btnRuta_Click);
             // 
+            // POINTBUTTON
+            // 
+            this.POINTBUTTON.Location = new System.Drawing.Point(523, 31);
+            this.POINTBUTTON.Margin = new System.Windows.Forms.Padding(2);
+            this.POINTBUTTON.Name = "POINTBUTTON";
+            this.POINTBUTTON.Size = new System.Drawing.Size(56, 32);
+            this.POINTBUTTON.TabIndex = 12;
+            this.POINTBUTTON.Text = "Puntos";
+            this.POINTBUTTON.UseVisualStyleBackColor = true;
+            this.POINTBUTTON.Click += new System.EventHandler(this.POINTBUTTON_Click);
+            // 
+            // Ruta_Button
+            // 
+            this.Ruta_Button.Location = new System.Drawing.Point(523, 90);
+            this.Ruta_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Ruta_Button.Name = "Ruta_Button";
+            this.Ruta_Button.Size = new System.Drawing.Size(56, 32);
+            this.Ruta_Button.TabIndex = 13;
+            this.Ruta_Button.Text = "Destinos";
+            this.Ruta_Button.UseVisualStyleBackColor = true;
+            this.Ruta_Button.Click += new System.EventHandler(this.Ruta_Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.Ruta_Button);
+            this.Controls.Add(this.POINTBUTTON);
             this.Controls.Add(this.btnRuta);
             this.Controls.Add(this.btnPolygon);
             this.Controls.Add(this.dataGridView1);
@@ -202,7 +228,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.gMapControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -226,6 +252,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPolygon;
         private System.Windows.Forms.Button btnRuta;
+        private System.Windows.Forms.Button POINTBUTTON;
+        private System.Windows.Forms.Button Ruta_Button;
     }
 }
 
