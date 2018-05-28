@@ -33,6 +33,9 @@ namespace MapasGoogle
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void Delete_Airport(string name);
 
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Update_Airport(string name, string Nname, double lat, double lon);
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -192,7 +195,7 @@ namespace MapasGoogle
 
         private void POINTBUTTON_Click(object sender, EventArgs e)
         {
-            double lng, lat;
+            
             //for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
             //{
             //    lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
@@ -203,9 +206,15 @@ namespace MapasGoogle
             //}
         }
 
-        private void Ruta_Button_Click(object sender, EventArgs e)
+        private void DESTINO_BT_Click(object sender, EventArgs e)
         {
-           
+            Update_Airport(txtDescipcion.Text, TxTupdate.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+            txtDescipcion.Text = "";
+            txtLatitud.Text = "";
+            txtLongitud.Text = "";
+            TxTupdate.Text = "";
         }
+
+        
     }
 }

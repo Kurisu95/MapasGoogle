@@ -41,7 +41,9 @@
             this.btnPolygon = new System.Windows.Forms.Button();
             this.btnRuta = new System.Windows.Forms.Button();
             this.POINTBUTTON = new System.Windows.Forms.Button();
-            this.Ruta_Button = new System.Windows.Forms.Button();
+            this.DESTINO_BT = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxTupdate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,7 +191,7 @@
             // 
             // POINTBUTTON
             // 
-            this.POINTBUTTON.Location = new System.Drawing.Point(523, 31);
+            this.POINTBUTTON.Location = new System.Drawing.Point(523, 14);
             this.POINTBUTTON.Margin = new System.Windows.Forms.Padding(2);
             this.POINTBUTTON.Name = "POINTBUTTON";
             this.POINTBUTTON.Size = new System.Drawing.Size(56, 32);
@@ -198,23 +200,43 @@
             this.POINTBUTTON.UseVisualStyleBackColor = true;
             this.POINTBUTTON.Click += new System.EventHandler(this.POINTBUTTON_Click);
             // 
-            // Ruta_Button
+            // DESTINO_BT
             // 
-            this.Ruta_Button.Location = new System.Drawing.Point(523, 90);
-            this.Ruta_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Ruta_Button.Name = "Ruta_Button";
-            this.Ruta_Button.Size = new System.Drawing.Size(56, 32);
-            this.Ruta_Button.TabIndex = 13;
-            this.Ruta_Button.Text = "Destinos";
-            this.Ruta_Button.UseVisualStyleBackColor = true;
-            this.Ruta_Button.Click += new System.EventHandler(this.Ruta_Button_Click);
+            this.DESTINO_BT.Location = new System.Drawing.Point(523, 50);
+            this.DESTINO_BT.Margin = new System.Windows.Forms.Padding(2);
+            this.DESTINO_BT.Name = "DESTINO_BT";
+            this.DESTINO_BT.Size = new System.Drawing.Size(56, 32);
+            this.DESTINO_BT.TabIndex = 13;
+            this.DESTINO_BT.Text = "Update";
+            this.DESTINO_BT.UseVisualStyleBackColor = true;
+            this.DESTINO_BT.Click += new System.EventHandler(this.DESTINO_BT_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(536, 90);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Update";
+            // 
+            // TxTupdate
+            // 
+            this.TxTupdate.Location = new System.Drawing.Point(515, 106);
+            this.TxTupdate.Margin = new System.Windows.Forms.Padding(2);
+            this.TxTupdate.Name = "TxTupdate";
+            this.TxTupdate.Size = new System.Drawing.Size(76, 20);
+            this.TxTupdate.TabIndex = 15;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.Ruta_Button);
+            this.Controls.Add(this.TxTupdate);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DESTINO_BT);
             this.Controls.Add(this.POINTBUTTON);
             this.Controls.Add(this.btnRuta);
             this.Controls.Add(this.btnPolygon);
@@ -253,7 +275,9 @@
         private System.Windows.Forms.Button btnPolygon;
         private System.Windows.Forms.Button btnRuta;
         private System.Windows.Forms.Button POINTBUTTON;
-        private System.Windows.Forms.Button Ruta_Button;
+        private System.Windows.Forms.Button DESTINO_BT;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxTupdate;
     }
 }
 
