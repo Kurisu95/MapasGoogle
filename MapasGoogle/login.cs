@@ -15,6 +15,9 @@ namespace MapasGoogle
         public login()
         {
             InitializeComponent();
+            passwordTxtBox.Text = "";
+            passwordTxtBox.PasswordChar = '*';
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)

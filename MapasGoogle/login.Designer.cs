@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.userTxtBox = new System.Windows.Forms.TextBox();
-            this.passwordTxtBox = new System.Windows.Forms.TextBox();
             this.signUpBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
             this.userLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginLbl = new System.Windows.Forms.Label();
+            this.passwordTxtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // userTxtBox
@@ -43,13 +43,6 @@
             this.userTxtBox.Name = "userTxtBox";
             this.userTxtBox.Size = new System.Drawing.Size(106, 20);
             this.userTxtBox.TabIndex = 0;
-            // 
-            // passwordTxtBox
-            // 
-            this.passwordTxtBox.Location = new System.Drawing.Point(152, 182);
-            this.passwordTxtBox.Name = "passwordTxtBox";
-            this.passwordTxtBox.Size = new System.Drawing.Size(106, 20);
-            this.passwordTxtBox.TabIndex = 1;
             // 
             // signUpBtn
             // 
@@ -101,6 +94,13 @@
             this.loginLbl.TabIndex = 6;
             this.loginLbl.Text = "LOGIN";
             // 
+            // passwordTxtBox
+            // 
+            this.passwordTxtBox.Location = new System.Drawing.Point(152, 182);
+            this.passwordTxtBox.Name = "passwordTxtBox";
+            this.passwordTxtBox.Size = new System.Drawing.Size(106, 20);
+            this.passwordTxtBox.TabIndex = 1;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,11 +126,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox userTxtBox;
-        private System.Windows.Forms.TextBox passwordTxtBox;
         private System.Windows.Forms.Button signUpBtn;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label loginLbl;
+        private System.Windows.Forms.TextBox passwordTxtBox;
     }
 }

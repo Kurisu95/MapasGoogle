@@ -36,6 +36,9 @@ namespace MapasGoogle
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void Update_Airport(string name, string Nname, double lat, double lon);
 
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern bool Exist_Airport(string name);
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -128,14 +131,25 @@ namespace MapasGoogle
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-                Creat_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
-                dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
-                txtDescipcion.Text = "";
-                txtLatitud.Text = "";
-                txtLongitud.Text = "";
-
-
+            if (txtDescipcion.Text.Length != 0)
+            {
+                if (!Exist_Airport(txtDescipcion.Text))
+                {
+                    Creat_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+                    dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
+                    txtDescipcion.Text = "";
+                    txtLatitud.Text = "";
+                    txtLongitud.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Airport already Exist, try antoher name");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Airport Name Field Empty");
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -146,73 +160,42 @@ namespace MapasGoogle
             txtDescipcion.Text = "";
             txtLatitud.Text = "";
             txtLongitud.Text = "";
-                
+
         }
+        
 
-        private void btnPolygon_Click(object sender, EventArgs e)
-        {
-            
-
-            GMapOverlay Poligono = new GMapOverlay("POligono");
-            List<PointLatLng> puntos = new List<PointLatLng>();
-
-            double lng, lat;
-            for(int filas = 0; filas < dataGridView1.Rows.Count -1 ; filas++)
-            {
-                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
-                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
-                puntos.Add(new PointLatLng(lat, lng));
-
-            }
-            GMapPolygon poligonoPuntos = new GMapPolygon(puntos, "Poligono");
-            Poligono.Polygons.Add(poligonoPuntos);
-            gMapControl1.Overlays.Add(Poligono);
-
-            gMapControl1.Zoom = gMapControl1.Zoom + 1;
-            gMapControl1.Zoom = gMapControl1.Zoom - 1;
-        }
-
-        private void btnRuta_Click(object sender, EventArgs e)
-        {
-            GMapOverlay Ruta = new GMapOverlay("CapaRuta");
-            List<PointLatLng> puntos = new List<PointLatLng>();
-
-            double lng, lat;
-            for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
-            {
-                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
-                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
-                puntos.Add(new PointLatLng(lat, lng));
-
-            }
-            GMapRoute PuntosRuta = new GMapRoute(puntos, "Ruta");
-            Ruta.Routes.Add(PuntosRuta);
-            gMapControl1.Overlays.Add(Ruta);
-
-            gMapControl1.Zoom = gMapControl1.Zoom + 1;
-            gMapControl1.Zoom = gMapControl1.Zoom - 1;
-        }
-
-        private void POINTBUTTON_Click(object sender, EventArgs e)
-        {
-            
-            //for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
-            //{
-            //    lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
-            //    lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
-            //    marker.Position = new PointLatLng(lat, lng);
-            //    gMapControl1.Position = marker.Position;
-
-            //}
-        }
 
         private void DESTINO_BT_Click(object sender, EventArgs e)
         {
-            Update_Airport(txtDescipcion.Text, TxTupdate.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
-            txtDescipcion.Text = "";
-            txtLatitud.Text = "";
-            txtLongitud.Text = "";
-            TxTupdate.Text = "";
+            if (TxTupdate.Text.Length != 0 && txtDescipcion.Text.Length != 0 &&txtLatitud.Text.Length !=0 && txtLongitud.Text.Length !=0)
+            {
+                Update_Airport(txtDescipcion.Text, TxTupdate.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+                txtDescipcion.Text = "";
+                txtLatitud.Text = "";
+                txtLongitud.Text = "";
+                TxTupdate.Text = "";
+
+                for (int i =0;i<dataGridView1.Rows.Count;i++)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                }
+
+                Char delimit = ';';
+                for (int i = 0; i < Lenght_File(); i++)
+                {
+                    StringBuilder st = new StringBuilder(1000);
+                    Read_Airport(st, (i + 1));
+                    String[] elements = st.ToString().Split(delimit);
+
+                    dt.Rows.Add(elements[0], elements[1], elements[2]);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Some of the fields are empty");
+            }
         }
 
         
