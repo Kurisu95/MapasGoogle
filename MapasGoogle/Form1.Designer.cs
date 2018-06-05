@@ -41,7 +41,20 @@
             this.DESTINO_BT = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.TxTupdate = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.IDtxt = new System.Windows.Forms.TextBox();
+            this.RouteTXT = new System.Windows.Forms.TextBox();
+            this.DisTXT = new System.Windows.Forms.TextBox();
+            this.UPRTXT = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.AddRoubtn = new System.Windows.Forms.Button();
+            this.DeleRoubtn = new System.Windows.Forms.Button();
+            this.Uproutbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -75,7 +88,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(644, 26);
+            this.btnAgregar.Location = new System.Drawing.Point(563, 26);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(66, 29);
@@ -86,7 +99,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(644, 67);
+            this.btnEliminar.Location = new System.Drawing.Point(563, 87);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(66, 29);
@@ -97,7 +110,7 @@
             // 
             // txtDescipcion
             // 
-            this.txtDescipcion.Location = new System.Drawing.Point(553, 26);
+            this.txtDescipcion.Location = new System.Drawing.Point(462, 31);
             this.txtDescipcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescipcion.Name = "txtDescipcion";
             this.txtDescipcion.Size = new System.Drawing.Size(76, 20);
@@ -105,7 +118,7 @@
             // 
             // txtLatitud
             // 
-            this.txtLatitud.Location = new System.Drawing.Point(553, 67);
+            this.txtLatitud.Location = new System.Drawing.Point(462, 92);
             this.txtLatitud.Margin = new System.Windows.Forms.Padding(2);
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.Size = new System.Drawing.Size(76, 20);
@@ -113,7 +126,7 @@
             // 
             // txtLongitud
             // 
-            this.txtLongitud.Location = new System.Drawing.Point(553, 104);
+            this.txtLongitud.Location = new System.Drawing.Point(462, 154);
             this.txtLongitud.Margin = new System.Windows.Forms.Padding(2);
             this.txtLongitud.Name = "txtLongitud";
             this.txtLongitud.Size = new System.Drawing.Size(76, 20);
@@ -122,7 +135,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(550, 9);
+            this.label1.Location = new System.Drawing.Point(464, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
@@ -133,7 +146,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(550, 48);
+            this.label2.Location = new System.Drawing.Point(459, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
@@ -143,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(550, 89);
+            this.label3.Location = new System.Drawing.Point(459, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
@@ -166,7 +179,7 @@
             // 
             // DESTINO_BT
             // 
-            this.DESTINO_BT.Location = new System.Drawing.Point(644, 114);
+            this.DESTINO_BT.Location = new System.Drawing.Point(563, 212);
             this.DESTINO_BT.Margin = new System.Windows.Forms.Padding(2);
             this.DESTINO_BT.Name = "DESTINO_BT";
             this.DESTINO_BT.Size = new System.Drawing.Size(66, 29);
@@ -178,7 +191,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(553, 130);
+            this.label4.Location = new System.Drawing.Point(459, 192);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
@@ -187,17 +200,147 @@
             // 
             // TxTupdate
             // 
-            this.TxTupdate.Location = new System.Drawing.Point(553, 145);
+            this.TxTupdate.Location = new System.Drawing.Point(462, 221);
             this.TxTupdate.Margin = new System.Windows.Forms.Padding(2);
             this.TxTupdate.Name = "TxTupdate";
             this.TxTupdate.Size = new System.Drawing.Size(76, 20);
             this.TxTupdate.TabIndex = 15;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(757, 260);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(249, 211);
+            this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // IDtxt
+            // 
+            this.IDtxt.Location = new System.Drawing.Point(734, 31);
+            this.IDtxt.Margin = new System.Windows.Forms.Padding(2);
+            this.IDtxt.Name = "IDtxt";
+            this.IDtxt.Size = new System.Drawing.Size(116, 20);
+            this.IDtxt.TabIndex = 17;
+            // 
+            // RouteTXT
+            // 
+            this.RouteTXT.Location = new System.Drawing.Point(734, 96);
+            this.RouteTXT.Margin = new System.Windows.Forms.Padding(2);
+            this.RouteTXT.Name = "RouteTXT";
+            this.RouteTXT.Size = new System.Drawing.Size(116, 20);
+            this.RouteTXT.TabIndex = 18;
+            // 
+            // DisTXT
+            // 
+            this.DisTXT.Location = new System.Drawing.Point(734, 154);
+            this.DisTXT.Margin = new System.Windows.Forms.Padding(2);
+            this.DisTXT.Name = "DisTXT";
+            this.DisTXT.Size = new System.Drawing.Size(116, 20);
+            this.DisTXT.TabIndex = 19;
+            // 
+            // UPRTXT
+            // 
+            this.UPRTXT.Location = new System.Drawing.Point(734, 221);
+            this.UPRTXT.Margin = new System.Windows.Forms.Padding(2);
+            this.UPRTXT.Name = "UPRTXT";
+            this.UPRTXT.Size = new System.Drawing.Size(116, 20);
+            this.UPRTXT.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(731, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "ID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(731, 66);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Route";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(731, 125);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Distance";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(731, 192);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Update";
+            // 
+            // AddRoubtn
+            // 
+            this.AddRoubtn.Location = new System.Drawing.Point(906, 26);
+            this.AddRoubtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AddRoubtn.Name = "AddRoubtn";
+            this.AddRoubtn.Size = new System.Drawing.Size(66, 29);
+            this.AddRoubtn.TabIndex = 25;
+            this.AddRoubtn.Text = "ADD";
+            this.AddRoubtn.UseVisualStyleBackColor = true;
+            this.AddRoubtn.Click += new System.EventHandler(this.AddRoubtn_Click);
+            // 
+            // DeleRoubtn
+            // 
+            this.DeleRoubtn.Location = new System.Drawing.Point(906, 87);
+            this.DeleRoubtn.Margin = new System.Windows.Forms.Padding(2);
+            this.DeleRoubtn.Name = "DeleRoubtn";
+            this.DeleRoubtn.Size = new System.Drawing.Size(66, 29);
+            this.DeleRoubtn.TabIndex = 26;
+            this.DeleRoubtn.Text = "DELETE";
+            this.DeleRoubtn.UseVisualStyleBackColor = true;
+            this.DeleRoubtn.Click += new System.EventHandler(this.DeleRoubtn_Click);
+            // 
+            // Uproutbtn
+            // 
+            this.Uproutbtn.Location = new System.Drawing.Point(906, 212);
+            this.Uproutbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.Uproutbtn.Name = "Uproutbtn";
+            this.Uproutbtn.Size = new System.Drawing.Size(66, 29);
+            this.Uproutbtn.TabIndex = 27;
+            this.Uproutbtn.Text = "UPDATE";
+            this.Uproutbtn.UseVisualStyleBackColor = true;
+            this.Uproutbtn.Click += new System.EventHandler(this.Uproutbtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 483);
+            this.ClientSize = new System.Drawing.Size(1017, 483);
+            this.Controls.Add(this.Uproutbtn);
+            this.Controls.Add(this.DeleRoubtn);
+            this.Controls.Add(this.AddRoubtn);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.UPRTXT);
+            this.Controls.Add(this.DisTXT);
+            this.Controls.Add(this.RouteTXT);
+            this.Controls.Add(this.IDtxt);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.TxTupdate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DESTINO_BT);
@@ -216,6 +359,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +380,18 @@
         private System.Windows.Forms.Button DESTINO_BT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxTupdate;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox IDtxt;
+        private System.Windows.Forms.TextBox RouteTXT;
+        private System.Windows.Forms.TextBox DisTXT;
+        private System.Windows.Forms.TextBox UPRTXT;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button AddRoubtn;
+        private System.Windows.Forms.Button DeleRoubtn;
+        private System.Windows.Forms.Button Uproutbtn;
     }
 }
 
