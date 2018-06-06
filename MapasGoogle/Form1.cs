@@ -170,18 +170,14 @@ namespace MapasGoogle
         {
             if (txtDescipcion.Text.Length != 0)
             {
-                if (!Exist_Airport(txtDescipcion.Text))
-                {
+                
                     Creat_Airport(txtDescipcion.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
                     dt.Rows.Add(txtDescipcion.Text, txtLatitud.Text, txtLongitud.Text);
                     txtDescipcion.Text = "";
                     txtLatitud.Text = "";
                     txtLongitud.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Airport already Exist, try antoher name");
-                }
+                
+                
             }
             else
             {
