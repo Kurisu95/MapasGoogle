@@ -54,6 +54,12 @@ namespace MapasGoogle
         [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int Length_R();
 
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Update_IDroute(string id, string nID);
+
+        [DllImport("C:\\Users\\Mario Flores JR\\Documents\\TrabajosEstructuraDatos1\\TrabajosEstructuraDatos1\\Airport_DLL_BACKEND\\Debug\\Airport_DLL_BACKEND.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern void Delete_allIDRoutes(string id);
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -194,6 +200,25 @@ namespace MapasGoogle
             txtLatitud.Text = "";
             txtLongitud.Text = "";
 
+            Char delimit = ';';
+            for (int i = 0; i < Lenght_File(); i++)
+            {
+                StringBuilder st = new StringBuilder(1000);
+                Read_Airport(st, (i + 1));
+                String[] elements = st.ToString().Split(delimit);
+
+                dt.Rows.Add(elements[0], elements[1], elements[2]);
+
+            }
+
+            for (int i = 0; i < Length_R(); i++)
+            {
+                StringBuilder st = new StringBuilder(1000);
+                Read_Route(st, (i + 1));
+                String[] elements = st.ToString().Split(delimit);
+
+                dt.Rows.Add(elements[0], elements[1], elements[2]);
+            }
         }
 
 
@@ -202,24 +227,45 @@ namespace MapasGoogle
         {
             if (TxTupdate.Text.Length != 0 && txtDescipcion.Text.Length != 0 && txtLatitud.Text.Length != 0 && txtLongitud.Text.Length != 0)
             {
-                Update_Airport(txtDescipcion.Text, TxTupdate.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
-                txtDescipcion.Text = "";
-                txtLatitud.Text = "";
-                txtLongitud.Text = "";
-                TxTupdate.Text = "";
-                dt.Rows.Clear();
-
-                Char delimit = ';';
-                for (int i = 0; i < Lenght_File(); i++)
+                if (Exist_Airport(txtDescipcion.Text))
                 {
-                    StringBuilder st = new StringBuilder(1000);
-                    Read_Airport(st, (i + 1));
-                    String[] elements = st.ToString().Split(delimit);
+                    Update_Airport(txtDescipcion.Text, TxTupdate.Text, Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+                    
+                    txtDescipcion.Text = "";
+                    txtLatitud.Text = "";
+                    txtLongitud.Text = "";
+                    TxTupdate.Text = "";
+                    dt.Rows.Clear();
 
-                    dt.Rows.Add(elements[0], elements[1], elements[2]);
+                    IDtxt.Text = "";
+                    RouteTXT.Text = "";
+                    DisTXT.Text = "";
+                    dt2.Rows.Clear();
 
+                    Char delimit = ';';
+                    for (int i = 0; i < Lenght_File(); i++)
+                    {
+                        StringBuilder st = new StringBuilder(1000);
+                        Read_Airport(st, (i + 1));
+                        String[] elements = st.ToString().Split(delimit);
+
+                        dt.Rows.Add(elements[0], elements[1], elements[2]);
+
+                    }
+
+                    for(int i = 0; i < Length_R(); i++)
+                    {
+                        StringBuilder st = new StringBuilder(1000);
+                        Read_Route(st, (i + 1));
+                        String[] elements = st.ToString().Split(delimit);
+
+                        dt.Rows.Add(elements[0], elements[1], elements[2]);
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("Check Airport ID");
+                }
             }
             else
             {
@@ -241,13 +287,22 @@ namespace MapasGoogle
         {
             if (IDtxt.Text.Length != 0 && DisTXT.Text.Length != 0 && RouteTXT.Text.Length != 0)
             {
+               
                 if (Create_route(IDtxt.Text, RouteTXT.Text, Convert.ToDouble(DisTXT.Text)) == 1)
                 {
                     dt2.Rows.Add(IDtxt.Text, RouteTXT.Text, DisTXT.Text);
                     IDtxt.Text = "";
                     RouteTXT.Text = "";
                     DisTXT.Text = "";
-                    
+                    Char delimit = ';';
+                    for (int i = 0; i < Length_R(); i++)
+                    {
+                        StringBuilder st = new StringBuilder(1000);
+                        Read_Route(st, (i + 1));
+                        String[] elements = st.ToString().Split(delimit);
+
+                        dt.Rows.Add(elements[0], elements[1], elements[2]);
+                    }
 
                 }
                 else
@@ -270,6 +325,8 @@ namespace MapasGoogle
                 RouteTXT.Text = "";
                 DisTXT.Text = "";
                 dt2.Rows.RemoveAt(filaSelec);
+
+
             }
             else
             {
